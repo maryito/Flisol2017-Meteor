@@ -1,0 +1,68 @@
+<head>
+  <title>flisol2017</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <h1> Taller de Meteor 2017 en el FLISOL 2017</h1>
+    <hr>
+    <div class="col-md-4">
+      {{> nuevo }}
+    </div>
+    <vr></vr>
+    <div class="col-md-8">
+      {{> flisol}}
+    </div>
+  </div>
+
+</body>
+
+<template name="flisol">
+  <div class="row">
+    <h2>Listado de Contactos</h2>
+    <table class="table">
+      <tbody>
+        <tr>
+          <th> NOMBRE </th>
+          <th> APELLIDO </th>
+          <th> CELULAR </th>
+          <th> OPCION </th>
+        </tr>
+      </tbody>
+
+      {{#each ListadoDeNombre}}
+      <tr>
+        <td>{{ nombre }}</td>
+        <td>{{ apellido }}</td>
+        <td>{{ celular }}</td>
+        <td> <button class="btn btn-danger" id="BotonEliminar"> Eliminar </button></td>
+      </tr>
+      {{/each}}
+    </table>
+
+
+  </div>
+</template>
+
+<template name="nuevo">
+
+    <h1>Agregar Contacto</h1>
+  <div class="col-md-8">
+    <form id="fomrAgregar">
+      <div class="form-group">
+        <label for="Nombre">Nombre </label>
+        <input class="form-control" type="text" id="nombre" name="Nombre" placeholder="Ingrese el nombre">
+      </div>
+      <div class="form-group">
+        <label for="Apellido">Apellido </label>
+        <input class="form-control" type="text" id="apellido" name="Apellido" placeholder="Ingrese el Apellido">
+      </div>
+      <div class="form-group">
+        <label for="Celular">Celular </label>
+        <input class="form-control" type="number" id="celular" name="Celular" placeholder="Ingrese el Celular">
+      </div>
+    </form>
+    <button class="btn btn-primary" id="BotonAgregar"> Agregar</button>
+
+  </div>
+</template>
